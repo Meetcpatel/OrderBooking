@@ -151,6 +151,7 @@ export const lists: Lists = {
   }),
   Booking: list({
     fields: {
+      name: text(),
       email: text({
         hooks: {
           validateInput: async ({
@@ -163,7 +164,7 @@ export const lists: Lists = {
             context,
             addValidationError
           }) => {
-            if (operation === 'create' || operation === 'update') {
+            if (operation === 'create' || operation === 'update' ) {
               if (!validateEmail(inputData.email)) {
                 addValidationError('Email is not valid! Please enter valid Email');
               }

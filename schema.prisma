@@ -46,6 +46,7 @@ model Blog {
 
 model Booking {
   id       String    @id @default(cuid())
+  name     String    @default("")
   email    String    @default("")
   phone    String    @default("")
   timeFrom DateTime?
